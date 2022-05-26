@@ -22,10 +22,6 @@ class PostPagesTests(TestCase):
                 slug='test-slug'
             )
         )
-        # cls.post_without_group = Post.objects.create(
-        #     text='Тестовый текст без группы',
-        #     author=cls.user,
-        # )
 
     def setUp(self):
         self.authorized_client = Client()

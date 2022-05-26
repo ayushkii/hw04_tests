@@ -50,6 +50,9 @@ class PostFormTests(TestCase):
                 group=self.group.id,
             ).exists()
         )
+        response = (self.authorized_client.get(reverse('posts:index')))
+        first_object = response.context['page_obj'][0].text
+        self.assertEqual(first_object, 'Тестовый текст')
 
     def test_post_edit(self):
         form_data = {
